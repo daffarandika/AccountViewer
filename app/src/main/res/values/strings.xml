@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Accounts API</string>
+    <string name="email_1_s">Email : %1$s</string>
+    <string name="first_name_1_s">First Name : %1$s</string>
+    <string name="last_name_1_s">Last Name : %1$s</string>
+    <string name="avatar_1_s">Avatar : %1$s</string>
+    <string name="lorem">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque laoreet leo mauris, in viverra nulla fringilla at. Pellentesque pretium mauris vitae nisl vestibulum volutpat. Nam tincidunt, urna at lacinia pulvinar, felis quam fringilla odio, consequat sagittis turpis tellus vel dui. Nulla interdum, lorem non maximus feugiat, lacus velit semper orci, vitae consequat mauris ante vitae massa. Pellentesque quis nibh iaculis, venenatis odio ac, elementum lorem. Proin iaculis augue leo, quis porta nunc tristique eu. Etiam imperdiet auctor nunc a cursus. Phasellus leo diam, porta eget convallis eu, faucibus sit amet sapien. Ut quis dapibus tortor. Nullam lobortis felis nec condimentum pulvinar. Phasellus quis dolor et massa varius maximus a faucibus dui.
+    </string>
+</resources>
