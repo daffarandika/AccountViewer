@@ -2,8 +2,7 @@ package com.example.accountsapi
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.view.Menu
+import android.view.View
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.accountsapi.adapter.AccountAdapter
@@ -11,7 +10,6 @@ import com.example.accountsapi.databinding.ActivityMainBinding
 import com.example.accountsapi.model.AccountModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
 import org.json.JSONObject
 import java.net.HttpURLConnection
@@ -24,6 +22,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        binding.pb.visibility = View.VISIBLE
         lifecycleScope.launch(Dispatchers.IO) {
             val conn = URL("https://reqres.in/api/users?page=1").openConnection() as HttpURLConnection
             val inputString = conn.inputStream.bufferedReader().readText()
@@ -44,6 +43,7 @@ class MainActivity : AppCompatActivity() {
                     layoutManager = LinearLayoutManager(this@MainActivity)
                     adapter = AccountAdapter(this@MainActivity, accounts)
                 }
+                binding.pb.visibility = View.GONE
             }
         }
     }

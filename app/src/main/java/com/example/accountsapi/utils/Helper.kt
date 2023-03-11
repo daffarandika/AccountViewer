@@ -13,19 +13,6 @@ class Helper {
         val url = "https://reqres.in/api/users"
         val accounts : MutableList<AccountModel> = mutableListOf()
         fun GetAt(id : String) = runBlocking{
-            launch (Dispatchers.IO) {
-                val conn = URL(url+"/"+id).openConnection() as HttpURLConnection
-                val jsonString = conn.inputStream.bufferedReader().readText()
-                val jsonObject = JSONObject(jsonString)
-                val jsonDataObject = jsonObject.getJSONObject("data")
-                accounts.clear()
-                accounts.add(AccountModel(
-                    jsonDataObject.getString("id"),
-                    "${jsonDataObject.getString("first_name")} ${jsonDataObject.getString("last_name")}",
-                    jsonDataObject.getString("email"),
-                    jsonDataObject.getString("avatar")
-                ))
-            }
         }
     }
 }
