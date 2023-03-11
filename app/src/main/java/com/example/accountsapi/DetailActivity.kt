@@ -16,6 +16,7 @@ import java.net.URL
 
 class DetailActivity : AppCompatActivity(){
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.activity_menu, menu)
         return true
     }
 
@@ -30,25 +31,20 @@ class DetailActivity : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         binding = AccountDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val toolbar = findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
-        setSupportActionBar(toolbar)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         if (intent.hasExtra("id")){
 
             val id : String = intent.getStringExtra("id").toString()
             Helper.GetAt(id)
             val accounts = Helper.accounts
-            val name: String = accounts.first().firstName + " " +accounts.first().lastName
+            val name: String = accounts.first().name
             binding.tvName.text = name
             binding.tvEmail.text = accounts.first().email
             binding.tvDesc.text = getString(R.string.lorem)
             getImage(accounts.first().avatar)
 
         } else {
-
             val toast = Toast.makeText(this, "gagal cok", Toast.LENGTH_SHORT)
             toast.show()
-
         }
     }
     fun getImage (imgURL : String) = runBlocking{

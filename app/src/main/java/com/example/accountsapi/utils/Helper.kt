@@ -21,8 +21,7 @@ class Helper {
                 accounts.clear()
                 accounts.add(AccountModel(
                     jsonDataObject.getString("id"),
-                    jsonDataObject.getString("first_name"),
-                    jsonDataObject.getString("last_name"),
+                    "${jsonDataObject.getString("first_name")} ${jsonDataObject.getString("last_name")}",
                     jsonDataObject.getString("email"),
                     jsonDataObject.getString("avatar")
                 ))

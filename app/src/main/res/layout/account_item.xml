@@ -2,18 +2,24 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:elevation="5dp"
+    app:cardCornerRadius="20dp"
+    android:backgroundTint="@color/black"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/account_item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="8dp"
+        android:padding="10dp"
         >
-        <ImageView
+        <com.google.android.material.imageview.ShapeableImageView
+            app:shapeAppearance="@style/circle"
             android:layout_width="100dp"
             android:layout_height="100dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/ic_launcher_background"
             android:id="@+id/iv_avatar"/>
         <LinearLayout
             android:paddingHorizontal="16dp"
@@ -25,10 +31,11 @@
             android:layout_height="wrap_content">
 
             <TextView
+                android:id="@+id/text_name"
+                android:textColor="@color/white"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/text_first_name"
-                android:text="@string/first_name_1_s"
+                android:text="name"
                 app:layout_constraintStart_toEndOf="@id/iv_avatar"
                 app:layout_constraintTop_toTopOf="parent"/>
             <TextView
@@ -37,14 +44,8 @@
                 android:id="@+id/text_email"
                 android:text="@string/email_1_s"
                 app:layout_constraintStart_toEndOf="@id/iv_avatar"
+                android:textColor="@color/white"
                 app:layout_constraintTop_toBottomOf="@+id/text_last_name"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/text_last_name"
-                android:text="@string/last_name_1_s"
-                app:layout_constraintStart_toEndOf="@id/iv_avatar"
-                app:layout_constraintTop_toBottomOf="@id/text_first_name"/>
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 

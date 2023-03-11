@@ -22,8 +22,7 @@ import java.net.URL
 class AccountAdapter(val context : Context, val accountList: MutableList<AccountModel>) : RecyclerView.Adapter<AccountAdapter.AccountViewHolder>(){
     class AccountViewHolder (view : View) : RecyclerView.ViewHolder(view){
         val textEmail : TextView = view.findViewById(R.id.text_email)
-        val textFirstName : TextView = view.findViewById(R.id.text_first_name)
-        val textLastName : TextView = view.findViewById(R.id.text_last_name)
+        val textName : TextView = view.findViewById(R.id.text_name)
         val imageView : ImageView = view.findViewById(R.id.iv_avatar)
     }
 
@@ -54,8 +53,7 @@ class AccountAdapter(val context : Context, val accountList: MutableList<Account
             (context as Activity).runOnUiThread {
                 val resources = context.resources
                 holder.textEmail.text = resources.getString(R.string.email_1_s, account.email)
-                holder.textFirstName.text = resources.getString(R.string.first_name_1_s, account.firstName)
-                holder.textLastName.text = resources.getString(R.string.last_name_1_s, account.lastName)
+                holder.textName.text = account.name
                 holder.imageView.setImageBitmap(bitmap)
             }
         }
